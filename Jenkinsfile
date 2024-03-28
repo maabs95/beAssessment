@@ -23,7 +23,6 @@ pipeline {
            }
       steps{
         script {
-            sh "chmod +x -R ${env.dockerimagename}"
             docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
             dockerImage.push("latest")
           }
