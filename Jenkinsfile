@@ -24,7 +24,7 @@ pipeline {
       steps{
         script {
           docker.withRegistry( '', registryCredential ) {
-            dockerImage.push("maabs95/beassessment")
+            dockerImage.push("latest")
           }
         }
       }
