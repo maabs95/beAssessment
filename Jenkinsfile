@@ -22,11 +22,10 @@ pipeline {
           registryCredential = 'dockerhub-credentials'
            }
       steps{
-        script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push("latest")
-          }
-        }
+        withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+                  sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+                  sh 'docker push maabs95/beassessment:latest'
+                }
       }
     }
   }
