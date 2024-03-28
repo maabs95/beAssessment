@@ -4,34 +4,30 @@ pipeline {
     dockerImage = ""
   }
   agent any
-  try{
-      stages {
-        stage('Checkout Source') {
-          steps {
-            git branch: 'main', url: 'https://github.com/maabs95/beAssessment.git'
-          }
+  stages {
+    stage('Checkout Source') {
+      steps {
+        git branch: 'main', url: 'https://github.com/maabs95/beAssessment.git'
+      }
+    }
+    stage('Build image') {
+      steps{
+        script {
+          dockerImage = docker.build dockerimagename
         }
-        stage('Build image') {
-          steps{
-            script {
-              dockerImage = docker.build dockerimagename
-            }
-          }
-        }
-        stage('Pushing Image') {
-          environment {
-              registryCredential = 'dockerhub-credentials'
-               }
-          steps{
-            script {
-              docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-                dockerImage.push("latest")
-              }
-            }
+      }
+    }
+    stage('Pushing Image') {
+      environment {
+          registryCredential = 'dockerhub-credentials'
+           }
+      steps{
+        script {
+          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
+            dockerImage.push("latest")
           }
         }
       }
-  } catch(e){
-    throw e
+    }
   }
 }
