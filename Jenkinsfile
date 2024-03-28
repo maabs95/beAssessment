@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/maabs95/beAssessment.git'
+        git branch: 'main', url: 'https://github.com/maabs95/beAssessment.git'
       }
     }
     stage('Build image') {
