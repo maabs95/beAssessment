@@ -1,0 +1,21 @@
+Database chosen
+- H2 Database is chosen for its simplicity, not require too much setup and easy to test onto
+
+How to use the API
+- To use the API, run the project in any IDE that supports Java. JDK 17 is required
+- Postman is recommended to test the API. The API documentation can be referred in BEAssessment.postman_collection.json. Import the file into the Postman
+- Table schema can be referred in src\main\resources\schema.sql
+- Pre-load data which will be inserted everytime the application run can be referred in src\main\resources\data.sql
+
+Added functionality
+- Added new table called borrowedBook to save the borrowed book id, borrower id and book return status
+- Borrower can borrow more than one book
+- Added duplication exception for unique id (userId) in table borrower 
+- Added response that inform who is currently borrowing the book
+
+Technology used
+- JDK 17
+- Spring Boot 3
+- H2 Database
+- Mybatis 
+- JUnit

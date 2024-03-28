@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main.mapper.BorrowerMapper">
+
+    <insert id="insertBorrower" parameterType="main.dto.BorrowerDto">
+        INSERT INTO borrower(userId,name,email) VALUES(#{userId},#{name},#{email})
+    </insert>
+
+    <select id="getBorrowerByUserId" resultType="main.dto.BorrowerDto">
+        SELECT * FROM borrower WHERE userId = #{param1}
+    </select>
+
+    <insert id="insertBorrowBook" parameterType="main.dto.BorrowBookDto">
+        INSERT INTO borrowedBook(id,bookId,borrowerId,returned) VALUES(#{id},#{bookId},#{borrowerId},#{returned})
+    </insert>
+
+    <select id="checkBookId" resultType="java.lang.String">
+        SELECT id FROM book WHERE id = #{param1}
+    </select>
+
+    <select id="checkUserId" resultType="java.lang.String">
+        SELECT userId FROM borrower WHERE userId = #{param1}
+    </select>
+
+    <select id="checkBorrowedBook" resultType="java.lang.String">
+        SELECT borrowerId FROM borrowedBook WHERE bookId = #{param1} AND returned = 'N'
+    </select>
+
+    <update id="updateReturnBook">
+        UPDATE borrowedBook SET returned = 'Y' WHERE bookId = #{param1} and borrowerId = #{param2}
+    </update>
+
+</mapper>
