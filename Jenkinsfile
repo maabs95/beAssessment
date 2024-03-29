@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    dockerimagename = "maabs95/beassessment2"
+    dockerimagename = "catolf/beassessment2"
     dockerImage = ""
   }
   agent any
