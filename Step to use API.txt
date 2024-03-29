@@ -1,0 +1,12 @@
+How to use the API
+- To use the API, run the project in any IDE that supports Java. JDK 17 is required
+- Postman is recommended to test the API. The API documentation can be referred in BEAssessment_API_DOC.zip. Unzip it and open index.html
+- Table schema can be referred in src\main\resources\schema.sql
+- Pre-load data which will be inserted everytime the application run can be referred in src\main\resources\data.sql
+
+Technology used
+- JDK 17
+- Spring Boot 3
+- H2 Database
+- Mybatis 
+- JUnit

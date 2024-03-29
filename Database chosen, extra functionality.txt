@@ -1,0 +1,8 @@
+Database chosen
+- H2 Database is chosen for its simplicity, not require too much setup and easy to test onto
+
+Added functionality
+- Added new table called borrowedBook to save the borrowed book id, borrower id and book return status
+- Borrower can borrow more than one book
+- Added duplication exception for unique id (userId) in table borrower 
+- Added response that inform who is currently borrowing the book

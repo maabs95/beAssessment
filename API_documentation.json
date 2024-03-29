@@ -1,0 +1,512 @@
+{
+	"info": {
+		"_postman_id": "6004e7f9-8d37-4f72-8100-952f38cd81e9",
+		"name": "BEAssessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32897847"
+	},
+	"item": [
+		{
+			"name": "BookRequest",
+			"item": [
+				{
+					"name": "getAllBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/getAllBooks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"getAllBooks"
+							]
+						},
+						"description": "Get all books available from book table"
+					},
+					"response": [
+						{
+							"name": "getAllBooks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/getAllBooks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"getAllBooks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 05:19:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": \"9cf9db036ab242eb87be5da4a0d08567\",\n            \"isbn\": \"AA\",\n            \"title\": \"Book A\",\n            \"author\": \"Ali\"\n        },\n        {\n            \"id\": \"1aab0637bcd74adbbbdab66ed392d099\",\n            \"isbn\": \"AA\",\n            \"title\": \"Book A\",\n            \"author\": \"Ali\"\n        },\n        {\n            \"id\": \"044bd8785390475091f746ea5a7c3c71\",\n            \"isbn\": \"BB\",\n            \"title\": \"Book B\",\n            \"author\": \"Amir\"\n        }\n    ],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "insertBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isbn\":\"abcd\",\r\n    \"title\":\"buku pelangi\",\r\n    \"author\":\"who wrote it\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/insertBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"insertBook"
+							]
+						},
+						"description": "Register new book and insert into book table\n\n| Name | Type | **Mandatory** |\n| --- | --- | --- |\n| isbn | String | Y |\n| title | String | Y |\n| author | String | Y |"
+					},
+					"response": [
+						{
+							"name": "insertBook",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isbn\":\"abcd\",\r\n    \"title\":\"buku pelangi\",\r\n    \"author\":\"who wrote it\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/insertBook",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"insertBook"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 05:19:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": \"\",\n    \"message\": \"\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Borrower",
+			"item": [
+				{
+					"name": "getBorrowerByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/getBorrowerByUserId?userId=lam",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"getBorrowerByUserId"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "lam"
+								}
+							]
+						},
+						"description": "Get user by userId in borrower table"
+					},
+					"response": [
+						{
+							"name": "getBorrowerByUserId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/getBorrowerByUserId?userId=lam",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"getBorrowerByUserId"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "lam"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 05:19:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"userId\": \"lam\",\n        \"name\": \"Lampard\",\n        \"email\": \"lampard@gmail.com\"\n    },\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "insertBorrower",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"testing\",\r\n    \"name\":\"testing\",\r\n    \"email\":\"email@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/insertBorrower",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"insertBorrower"
+							]
+						},
+						"description": "Register a new book and insert into borrower table\n\n| Name | Type | **Mandatory** |\n| --- | --- | --- |\n| userId | String | Y |\n| name | String | Y |\n| email | String | Y |"
+					},
+					"response": [
+						{
+							"name": "insertBorrower",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\":\"testing\",\r\n    \"name\":\"testing\",\r\n    \"email\":\"email@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/insertBorrower",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"insertBorrower"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 05:19:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": \"\",\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "borrowBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\":\"1aab0637bcd74adbbbdab66ed392d099\",\r\n    \"borrowerId\":\"lam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/borrowBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"borrowBook"
+							]
+						},
+						"description": "Insert new borrowed book into borrowedBook table. bookId is from id in book table and borrowerId is from userId in borrower table\n\n| Name | Type | **Mandatory** |\n| --- | --- | --- |\n| bookId | String | Y |\n| borrowerId | String | Y |"
+					},
+					"response": [
+						{
+							"name": "borrowBook",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookId\":\"1aab0637bcd74adbbbdab66ed392d099\",\r\n    \"borrowerId\":\"lam\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/borrowBook",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"borrowBook"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 05:19:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": \"\",\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateReturnBook",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\":\"9cf9db036ab242eb87be5da4a0d08567\",\r\n    \"borrowerId\":\"lem\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/updateReturnBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"updateReturnBook"
+							]
+						},
+						"description": "Update returned book by bookId in borrowedBook table\n\n| Name | Type | **Mandatory** |\n| --- | --- | --- |\n| bookId | String | Y |\n| borrowerId | String | Y |"
+					},
+					"response": [
+						{
+							"name": "updateReturnBook",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookId\":\"9cf9db036ab242eb87be5da4a0d08567\",\r\n    \"borrowerId\":\"lem\"    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/updateReturnBook",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"updateReturnBook"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 05:20:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": \"\",\n    \"message\": \"\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
