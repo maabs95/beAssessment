@@ -10,3 +10,5 @@ Technology used
 - H2 Database
 - Mybatis 
 - JUnit
+- Docker
+- Jenkins
